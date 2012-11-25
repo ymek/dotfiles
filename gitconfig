@@ -1,0 +1,50 @@
+[user]
+  email = myke@mykestubbs.com
+  name = Myke Stubbs
+
+[push]
+  default = tracking
+
+[merge]
+  ff = only
+
+[rerere]
+  enabled = 1
+
+[core]
+  editor = vim
+
+[alias]
+  st = status
+  di = diff
+  co = checkout
+  ci = commit
+  chp = cherry-pick
+  br = branch
+  sta = stash
+  gr = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+
+[apply]
+  whitespace = nowarn
+
+[format]
+  pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
+
+[color]
+  ui = auto
+
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan

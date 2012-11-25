@@ -1,0 +1,8 @@
+--type-add=ruby=.haml,.rake,.feature,.scss,.coffee,.jbuilder
+--type-add=css=.less,.sass
+--type-add=js=.coffee,.js
+--ignore-dir=vendor
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=doc
+--ignore-dir=coverage
