@@ -78,7 +78,7 @@ autocmd InsertEnter * se cul
 " automatically return to previous line number
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
-" MXML/AS syntax highlighting
+" extra syntax highlighting
 au BufNewFile,BufRead *.mxml set filetype=mxml
 au BufNewFile,BufRead *.as set filetype=actionscript
 
