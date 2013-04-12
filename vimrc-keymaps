@@ -1,15 +1,12 @@
-"
-" Fixing some horrible vim defaults 
-"
 if arrowkeys == "off"
-    nnoremap <up> <nop>
-    nnoremap <down> <nop>
-    nnoremap <left> <nop>
-    nnoremap <right> <nop>
-    inoremap <up> <nop>
-    inoremap <down> <nop>
-    inoremap <left> <nop>
-    inoremap <right> <nop>
+  nnoremap <up> <nop>
+  nnoremap <down> <nop>
+  nnoremap <left> <nop>
+  nnoremap <right> <nop>
+  inoremap <up> <nop>
+  inoremap <down> <nop>
+  inoremap <left> <nop>
+  inoremap <right> <nop>
 endif
 
 nnoremap <silent> j gj
@@ -54,7 +51,7 @@ nmap <silent> <leader>O :NERDTreeFind<cr>
 
 " Omni autocomplete
 inoremap <Nul> <C-x><C-o>
-"
+
 " Easy copy-paste from system clipboard
 nnoremap <silent> ,p "+p
 nnoremap <silent> ,P "+P
@@ -64,33 +61,32 @@ nnoremap <silent> ,y "+yy
 nnoremap <silent> <Home> g^
 
 if !has("gui_running")
+  " Save file by Ctrl+S
+  inoremap <silent> <C-S> <ESC>:w<CR>i
+  nnoremap <silent> <C-S> <ESC>:w<CR>i
+  vnoremap <silent> <C-S> <ESC>:w<CR>i
 
-    " Save file by Ctrl+S
-    inoremap <silent> <C-S> <ESC>:w<CR>i
-    nnoremap <silent> <C-S> <ESC>:w<CR>i
-    vnoremap <silent> <C-S> <ESC>:w<CR>i
+  " Ctrl+Backspace, Ctrl+Delete word deletion
+  inoremap <silent> <C-Backspace> <ESC><right>dbi
+  inoremap <silent> <C-Delete>    <ESC><right>dwi
 
-    " Ctrl+Backspace, Ctrl+Delete word deletion
-    inoremap <silent> <C-Backspace> <ESC><right>dbi
-    inoremap <silent> <C-Delete>    <ESC><right>dwi
-
-    " Tab navigation with Ctrl + Tabnum
-    ino <silent> <C-1> <ESC>:tabfirst<CR>
-    nno <silent> <C-1> <ESC>:tabfirst<CR>
-    ino <silent> <C-2> <ESC>2gt
-    nno <silent> <C-2> <ESC>2gt
-    ino <silent> <C-3> <ESC>3gt
-    nno <silent> <C-3> <ESC>3gt
-    ino <silent> <C-4> <ESC>4gt
-    nno <silent> <C-4> <ESC>4gt
-    ino <silent> <C-5> <ESC>5gt
-    nno <silent> <C-5> <ESC>5gt
-    ino <silent> <C-6> <ESC>6gt
-    nno <silent> <C-6> <ESC>6gt
-    ino <silent> <C-7> <ESC>7gt
-    nno <silent> <C-7> <ESC>7gt
-    ino <silent> <C-8> <ESC>8gt
-    nno <silent> <C-8> <ESC>8gt
-    ino <silent> <C-9> <ESC>:tablast<CR>
-    nno <silent> <C-9> <ESC>:tablast<CR>
+  " Tab navigation with Ctrl + Tabnum
+  ino <silent> <C-1> <ESC>:tabfirst<CR>
+  nno <silent> <C-1> <ESC>:tabfirst<CR>
+  ino <silent> <C-2> <ESC>2gt
+  nno <silent> <C-2> <ESC>2gt
+  ino <silent> <C-3> <ESC>3gt
+  nno <silent> <C-3> <ESC>3gt
+  ino <silent> <C-4> <ESC>4gt
+  nno <silent> <C-4> <ESC>4gt
+  ino <silent> <C-5> <ESC>5gt
+  nno <silent> <C-5> <ESC>5gt
+  ino <silent> <C-6> <ESC>6gt
+  nno <silent> <C-6> <ESC>6gt
+  ino <silent> <C-7> <ESC>7gt
+  nno <silent> <C-7> <ESC>7gt
+  ino <silent> <C-8> <ESC>8gt
+  nno <silent> <C-8> <ESC>8gt
+  ino <silent> <C-9> <ESC>:tablast<CR>
+  nno <silent> <C-9> <ESC>:tablast<CR>
 endif

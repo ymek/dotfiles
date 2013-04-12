@@ -1,47 +1,53 @@
-" 
-" Configure vim to suck less
-"
+""""""""""
+" Config variables used urrywhurr
 let softab    = "on"
-let tabsize   = 4
-let arrowkeys = "off" 			" Enable this if you like to use the arrow keys to move. I highly discourage you.
+let tabsize   = 2
+let arrowkeys = "off"
 let gui_font  = "Monaco:h12"
 let mapleader = ","
 
 source ~/.vimrc-defaults
-
-" Feel free to edit the files below (helpers functions, autocommands and key shortcuts)
 source ~/.vimrc-helpers
 source ~/.vimrc-au
 source ~/.vimrc-keymaps
 
-colorscheme ir_black
+" These need to come first, in this order
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'Lokaltog/powerline'
 
-" Default bundles
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'msanders/snipmate.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'ervandew/supertab'
-Bundle 'tpope/vim-surround'
 Bundle 'bkad/CamelCaseMotion'
-
+Bundle 'godlygeek/tabular'
 Bundle 'Raimondi/delimitMate.git'
+Bundle 'msanders/snipmate.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'sjl/gundo.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
+Bundle 'koron/nyancat-vim'
+
+""""""""""
+" Powerline
+set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
+
+""""""""""
+" Delimit Mate
 let delimitMate_visual_leader = ","
 
-Bundle 'tpope/vim-fugitive'
+""""""""""
+" Fugitive 
 "set statusline+=%{fugitive#statusline()}
 
-Bundle 'scrooloose/syntastic'
+""""""""""
+" Syntastic
 "set statusline+=%#warningmsg#
 "set statusline+=%{SyntasticStatuslineFlag()}
 "set statusline+=%*
-Bundle 'koron/nyancat-vim'
 
-
-"""
-" Custom _m stuff
-
-Bundle 'sjl/gundo.vim'
+""""""""""
+" GUndo
 map <silent> w <Plug>CamelCaseMotion_w
 map <silent> b <Plug>CamelCaseMotion_b
 map <silent> e <Plug>CamelCaseMotion_e
@@ -49,21 +55,13 @@ sunmap w
 sunmap b
 sunmap e
 
-set background=light
-set background=dark
-set pastetoggle=<F3>
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-"set statusline+=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
-set shiftwidth=2 tabstop=2 softtabstop=2
-set lsp=0
-set mouse-=a
+""""""""""
+" General Config
 
-" wildmenu
-set wildmenu
-set wildmode=list:longest
-set wildchar=<Tab>
-set wildcharm=<C-Z>
-nnoremap <F10> :b <C-Z>
+" Reduce font line height
+"set lsp=0
+
+set pastetoggle=<F3>
 
 " Strip Windows line endings
 map <F7> :perldo s/\cM//
@@ -71,16 +69,8 @@ map <F7> :perldo s/\cM//
 " Clear searches with C/
 map <C-/> :nohl <CR>
 
-" Highlight the current line in insert mode
-autocmd InsertLeave * se nocul 
-autocmd InsertEnter * se cul
-
-" automatically return to previous line number
-au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
-
-" extra syntax highlighting
-au BufNewFile,BufRead *.mxml set filetype=mxml
-au BufNewFile,BufRead *.as set filetype=actionscript
+" i_CTRL-X_CTRL-U matchers for minitest
+set completefunc=syntaxcomplete#Complete
 
 " Improve buffer resizing. alt-shift and hold the key
 :nmap <esc>> :vertical res +1^M
@@ -88,3 +78,13 @@ au BufNewFile,BufRead *.as set filetype=actionscript
 :nmap <esc>+ :res +1^M
 :nmap <esc>- :res -1^M
 
+"set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+"set statusline+=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+
+"colorscheme ir_black
+colorscheme cotingale
+
+" git stuff
+augroup vim_config
+  autocmd FileType gitrebase call LoadGitrebaseBindings()
+augroup END
