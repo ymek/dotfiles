@@ -1,8 +1,11 @@
-### Myke's Dotfiles
+## Dotfiles
 
 These are my dotfiles.  There are many like them, but these are mine.
 
-Notes:
-git clone
-rake
-tah-done
+### Notes:
+* git clone
+* git submodule init
+* git submodule update
+* rake
+
+t'done
