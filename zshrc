@@ -42,4 +42,4 @@ unsetopt correct_all
 unsetopt correct
 
 # Customize to your needs...
-export PATH=/Users/_m/.rvm/gems/ruby-1.9.3-p0/bin:/Users/_m/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/_m/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/_m/.rvm/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/sbin:/usr/sbin:/usr/local/sbin:/Users/_m/.rvm/bin
+export PATH=/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
