@@ -1,0 +1,8 @@
+# detach the screen if we get disconnected
+autodetach on
+
+defscrollback 15000
+bind b eval "writebuf" "exec sh -c 'pbcopy < /tmp/screen-exchange'"
+bind / eval "scrollback 0" "scrollback 15000"
+
+shell -${SHELL}
