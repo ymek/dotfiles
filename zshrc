@@ -19,3 +19,7 @@ setopt menu_complete
 # Disable annoying-as-hell autocomplete
 unsetopt correct_all
 unsetopt correct
+
+# Ensure user-installed binaries take precedence
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
