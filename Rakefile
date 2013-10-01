@@ -5,13 +5,10 @@ require 'erb'
 
 desc "install the dot files into user's home directory"
 task :install do
-  install_oh_my_zsh
   switch_to_zsh
 
   replace_all = false
-  files = Dir['*'] - %w[Rakefile README LICENSE oh-my-zsh]
-  #files << "oh-my-zsh/custom/plugins/rbates"
-  #files << "oh-my-zsh/custom/rbates.zsh-theme"
+  files = Dir['*'] - %w[Rakefile README LICENSE]
   files.each do |file|
     system %Q{mkdir -p "$HOME/.#{File.dirname(file)}"} if file =~ /\//
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub(/\.erb$/, '')}"))
@@ -68,14 +65,5 @@ def switch_to_zsh
     system %Q{chsh -s $(which zsh)}
   else
     puts "skipping zsh"
-  end
-end
-
-def install_oh_my_zsh
-  puts 'installing oh-my-zsh'
-  if File.exist?(File.join(ENV['HOME'], ".oh-my-zsh"))
-    puts "found ~/.oh-my-zsh"
-  else
-    system %Q{git clone https://github.com/robbyrussell/oh-my-zsh.git "$HOME/.oh-my-zsh"}
   end
 end
