@@ -1,8 +1,27 @@
+# Only search with case sensitivity if there is mixed case
+--smart-case
+
+# Follow symlinks
+--follow
+
+# Force color and header, even in less -R.
+--color
+--group
+
+# Use "less -r" as my pager
+--pager=less -r
+
+# Search all files
+#-a
+
+# usage: ack --ruby my_search_string
 --type-add=ruby=.haml,.rake,.feature,.scss,.coffee,.jbuilder
+--type-add=python=.py
 --type-add=css=.less,.sass
 --type-add=js=.coffee,.js
+
 --ignore-dir=vendor
---ignore-dir=log
+#--ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=doc
 --ignore-dir=coverage
