@@ -1,3 +1,7 @@
+if [[ `uname` == "Darwin" ]]; then
+  source $HOME/.zshrc.osx
+fi
+
 #  insert completion on first tab even if ambiguous
 setopt menu_complete
 
