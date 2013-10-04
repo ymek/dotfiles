@@ -9,6 +9,7 @@ source /usr/local/opt/chruby/share/chruby/auto.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export ARCHFLAGS="-arch x86_64"
+export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
 # Uncomment to use Homebrew's directories rather than ~/.pyenv
 #export PYENV_ROOT=/usr/local/opt/pyenv
