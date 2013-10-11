@@ -8,6 +8,9 @@
 [merge]
   ff = only
 
+[rebase]
+  autosquash = true
+
 [rerere]
   enabled = 1
 
