@@ -18,14 +18,14 @@ Bundle 'Lokaltog/powerline'
 Bundle 'bkad/CamelCaseMotion'
 Bundle 'godlygeek/tabular'
 Bundle 'Raimondi/delimitMate.git'
-Bundle 'msanders/snipmate.vim'
-Bundle 'scrooloose/nerdcommenter'
+"Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
+Bundle 'msanders/snipmate.vim'
 Bundle 'koron/nyancat-vim'
 
 """"""""""
@@ -83,8 +83,11 @@ set completefunc=syntaxcomplete#Complete
 
 "colorscheme ir_black
 colorscheme cotingale
+set t_Co=256
+set t_ut=
+
 
 " git stuff
-augroup vim_config
-  autocmd FileType gitrebase call LoadGitrebaseBindings()
-augroup END
+"augroup vim_config
+"  autocmd FileType gitrebase call LoadGitrebaseBindings()
+"augroup END
