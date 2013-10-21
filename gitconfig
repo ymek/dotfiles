@@ -3,7 +3,7 @@
   name = Myke Stubbs
 
 [push]
-  default = tracking
+  default = upstream
 
 [merge]
   ff = only
@@ -12,7 +12,7 @@
   autosquash = true
 
 [rerere]
-  enabled = 1
+	enabled = true
 
 [core]
   editor = vim
