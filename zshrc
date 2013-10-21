@@ -24,7 +24,7 @@ setopt menu_complete
 unsetopt correct_all
 unsetopt correct
 
-source ~/.git.zsh
+source $HOME/.git.zsh
 autoload -U colors && colors
 
 function git_remote_prompt() {
@@ -39,3 +39,6 @@ PS1='%B%F{red}%(?..%? )%b %B%40<..<%~%<< %b$(git_remote_prompt) %F{yellow}$(git_
 # Ensure user-installed binaries take precedence
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
+if [ -s $HOME/.zprofile.bt ]; then
+  source $HOME/.zprofile.bt
+fi
