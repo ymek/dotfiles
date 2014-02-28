@@ -12,7 +12,12 @@
   autosquash = true
 
 [rerere]
-	enabled = true
+  enabled = true
+  #enabled = false
+
+[diff]
+  renames = true
+  conflictstyle = patience
 
 [core]
   editor = vim
@@ -25,7 +30,7 @@
   chp = cherry-pick
   br = branch
   sta = stash
-  gr = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+  gr = log --graph --date-order -C -M --pretty=format:\"%Cblue%h%Creset %Cgreen[%ad]%Creset (%an) %Cgreen%d%Creset %s\" --all --date=short
 
 [apply]
   whitespace = nowarn
