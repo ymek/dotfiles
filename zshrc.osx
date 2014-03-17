@@ -11,6 +11,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if [ -d '/usr/X11/include' ]; then
   export CPPFLAGS="-I/usr/X11/include -I/usr/X11/include/libpng15 -I/usr/X11/include/freetype2"
 fi
+
 export ARCHFLAGS="-arch x86_64"
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
