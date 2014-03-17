@@ -16,4 +16,9 @@ export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
 # Uncomment to use Homebrew's directories rather than ~/.pyenv
 #export PYENV_ROOT=/usr/local/opt/pyenv
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# Enable pyenv shims and autocompletion
+if which pyenv > /dev/null; then
+  eval "$(pyenv init -)"
+fi
+
