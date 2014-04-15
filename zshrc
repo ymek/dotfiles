@@ -38,7 +38,3 @@ PS1='%B%F{red}%(?..%? )%b %B%40<..<%~%<< %b$(git_remote_prompt) %F{yellow}$(git_
 
 # Ensure user-installed binaries take precedence
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-
-if [ -s $HOME/.zprofile.bt ]; then
-  source $HOME/.zprofile.bt
-fi
