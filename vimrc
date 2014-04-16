@@ -27,6 +27,13 @@ Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
 Bundle 'msanders/snipmate.vim'
 Bundle 'koron/nyancat-vim'
+Bundle 'kchmck/vim-coffee-script'
+
+""""""""""
+" Oddly, vim-coffeee-script requires these to be here
+" and completely breaks if they're pre-enabled by vimrc-defaults
+filetype plugin indent on
+syntax on
 
 """"""""""
 " Powerline

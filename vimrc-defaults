@@ -12,7 +12,6 @@ set enc=utf-8
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-filetype plugin indent on
 
 " Basic UI
 set visualbell
@@ -30,7 +29,8 @@ set winminheight=0
 
 """"""""""
 " General Configuration
-syntax on
+"filetype plugin indent on
+"syntax on
 
 """"""""""
 " Command-mode completion
