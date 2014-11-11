@@ -2,6 +2,7 @@ au BufNewFile,BufRead *.mxml set filetype=mxml
 au BufNewFile,BufRead *.as set filetype=actionscript
 au BufNewFile,BufRead *.cap set filetype=ruby
 au BufNewFile,BufRead *.jbuilder set filetype=ruby
+au BufNewFile,BufRead *.rabl set filetype=ruby
 au BufNewFile,BufRead Vagrantfile set filetype=ruby
 au BufNewFile,BufRead *.md set filetype=markdown
 
