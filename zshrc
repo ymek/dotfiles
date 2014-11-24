@@ -41,3 +41,5 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Add some me-specific aliases
 alias be='bundle exec'
+alias crails='bundle exec ./bin/rails console'
+alias srails='bundle exec ./bin/rails server'
