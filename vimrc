@@ -11,23 +11,31 @@ source ~/.vimrc-helpers
 source ~/.vimrc-au
 source ~/.vimrc-keymaps
 
-" These need to come first, in this order
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'Lokaltog/powerline'
 
-Bundle 'bkad/CamelCaseMotion'
-Bundle 'godlygeek/tabular'
-Bundle 'Raimondi/delimitMate.git'
-"Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'msanders/snipmate.vim'
-Bundle 'koron/nyancat-vim'
-Bundle 'kchmck/vim-coffee-script'
+call plug#begin('~/.vim/plugged')
+
+" These need to come first, in this order
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'Lokaltog/powerline'
+
+Plug 'bkad/CamelCaseMotion'
+Plug 'godlygeek/tabular'
+Plug 'Raimondi/delimitMate'
+"Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'sjl/gundo.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'tpope/vim-surround'
+Plug 'msanders/snipmate.vim'
+Plug 'koron/nyancat-vim'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'airblade/vim-gitgutter'
+
+call plug#end()
+
 
 """"""""""
 " Oddly, vim-coffeee-script requires these to be here

@@ -8,11 +8,6 @@ set hidden 			                  " Avoid asking to save before hiding
 set enc=utf-8
 "setlocal spell spelllang=en_us
 
-" Load Vundle
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
 " Basic UI
 set visualbell
 set shm=atIWswxrnmlf
