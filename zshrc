@@ -1,5 +1,7 @@
 if [[ `uname` == "Darwin" ]]; then
   source $HOME/.zshrc.osx
+else
+  source $HOME/.zshrc.linux
 fi
 
 #  insert completion on first tab even if ambiguous
