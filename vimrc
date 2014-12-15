@@ -5,6 +5,7 @@ let tabsize   = 2
 let arrowkeys = "off"
 let gui_font  = "Monaco:h12"
 let mapleader = ","
+let g:airline_powerline_fonts = 1
 
 source ~/.vimrc-defaults
 source ~/.vimrc-helpers
@@ -16,7 +17,7 @@ call plug#begin('~/.vim/plugged')
 
 " These need to come first, in this order
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
-Plug 'Lokaltog/powerline'
+Plug 'bling/vim-airline'
 
 Plug 'bkad/CamelCaseMotion'
 Plug 'godlygeek/tabular'
