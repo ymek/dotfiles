@@ -34,6 +34,7 @@ Plug 'koron/nyancat-vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'airblade/vim-gitgutter'
+Plug 'Keithbsmiley/swift.vim'
 
 call plug#end()
 
