@@ -4,6 +4,9 @@ else
   source $HOME/.zshrc.linux
 fi
 
+# Local application environment variables
+source $HOME/.zshrc.spendly
+
 #  insert completion on first tab even if ambiguous
 setopt menu_complete
 
