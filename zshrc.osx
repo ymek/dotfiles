@@ -18,8 +18,11 @@ export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 # Uncomment to use Homebrew's directories rather than ~/.pyenv
 #export PYENV_ROOT=/usr/local/opt/pyenv
 
+export PYENV_VERSION="2.7.8"
 # Enable pyenv shims and autocompletion
 if which pyenv > /dev/null; then
   eval "$(pyenv init -)"
 fi
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
