@@ -36,8 +36,11 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'airblade/vim-gitgutter'
 Plug 'Keithbsmiley/swift.vim'
 
+Plug 'othree/javascript-libraries-syntax.vim' ", { 'for': ['javascript', 'html'] }
 call plug#end()
 
+" default: 'jquery,underscore,backbone'
+let g:used_javascript_libs = 'jquery,handlebars'
 
 """"""""""
 " Oddly, vim-coffeee-script requires these to be here
