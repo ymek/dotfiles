@@ -9,7 +9,6 @@ let g:airline_powerline_fonts = 1
 
 source ~/.vimrc-defaults
 source ~/.vimrc-helpers
-source ~/.vimrc-au
 source ~/.vimrc-keymaps
 
 
@@ -19,7 +18,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'bling/vim-airline'
 
-Plug 'bkad/CamelCaseMotion'
+Plug 'othree/javascript-libraries-syntax.vim' ", { 'for': ['javascript', 'html'] }
 Plug 'godlygeek/tabular'
 Plug 'Raimondi/delimitMate'
 "Plug 'scrooloose/nerdcommenter'
@@ -35,9 +34,13 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'airblade/vim-gitgutter'
 Plug 'Keithbsmiley/swift.vim'
+Plug 'bkad/CamelCaseMotion'
+Plug 'mustache/vim-mustache-handlebars'
 
-Plug 'othree/javascript-libraries-syntax.vim' ", { 'for': ['javascript', 'html'] }
 call plug#end()
+
+" Source *after* plugins to ensure local autocmd > plugin autocmd
+source ~/.vimrc-au
 
 " default: 'jquery,underscore,backbone'
 let g:used_javascript_libs = 'jquery,handlebars'
