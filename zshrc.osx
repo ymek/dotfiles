@@ -15,6 +15,8 @@ fi
 export ARCHFLAGS="-arch x86_64"
 export SSL_CERT_FILE=/usr/local/opt/curl-ca-bundle/share/ca-bundle.crt
 
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 # Uncomment to use Homebrew's directories rather than ~/.pyenv
 #export PYENV_ROOT=/usr/local/opt/pyenv
 
@@ -26,3 +28,6 @@ fi
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+# ensure boot2docker ENV variables
+eval $(boot2docker shellinit 2> /dev/null)

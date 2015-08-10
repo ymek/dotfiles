@@ -1,3 +1,4 @@
+PATH="$(pwd)/bin:$PATH"
 if [[ `uname` == "Darwin" ]]; then
   source $HOME/.zshrc.osx
 else
@@ -5,7 +6,7 @@ else
 fi
 
 # Local application environment variables
-source $HOME/.zshrc.spendly
+source $HOME/.zshrc.homeme
 
 #  insert completion on first tab even if ambiguous
 setopt menu_complete
@@ -44,7 +45,10 @@ PS1='%B%F{red}%(?..%? )%b %B%40<..<%~%<< %b$(git_remote_prompt) %F{yellow}$(git_
 # Ensure user-installed binaries take precedence
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
+# Force 256-color terminals
+export TERM="xterm-256color"
+
 # Add some me-specific aliases
 alias be='bundle exec'
-alias crails='bundle exec ./bin/rails console'
-alias srails='bundle exec ./bin/rails server'
+alias crails='./bin/rails console'
+alias srails='./bin/rails server'
