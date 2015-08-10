@@ -12,8 +12,8 @@
   autosquash = true
 
 [rerere]
-  enabled = true
-  #enabled = false
+  #enabled = true
+  enabled = false
 
 [diff]
   renames = true
