@@ -6,7 +6,9 @@ else
 fi
 
 # Local application environment variables
-source $HOME/.zshrc.homeme
+if [ -e "$HOME/.zshrc.homeme" ]; then
+  source $HOME/.zshrc.homeme
+fi
 
 #  insert completion on first tab even if ambiguous
 setopt menu_complete
