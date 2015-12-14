@@ -15,7 +15,7 @@ source ~/.vimrc-keymaps
 call plug#begin('~/.vim/plugged')
 
 " These need to come first, in this order
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'bling/vim-airline'
 
 Plug 'othree/javascript-libraries-syntax.vim' ", { 'for': ['javascript', 'html'] }
