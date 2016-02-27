@@ -28,7 +28,7 @@ Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-surround'
-Plug 'msanders/snipmate.vim'
+"Plug 'msanders/snipmate.vim'
 Plug 'koron/nyancat-vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
 Plug 'nathanaelkane/vim-indent-guides'
