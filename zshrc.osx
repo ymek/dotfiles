@@ -1,11 +1,5 @@
-source $HOME/.grml/zsh/zshenv
-source $HOME/.grml/zsh/zprofile
-source $HOME/.grml/zsh/zshrc
-source $HOME/.grml/zsh/zlogin
-
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
-
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if [ -d '/usr/X11/include' ]; then

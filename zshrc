@@ -1,13 +1,14 @@
 PATH="$(pwd)/bin:$PATH"
+
+source $HOME/.grml/zsh/zshenv
+source $HOME/.grml/zsh/zprofile
+source $HOME/.grml/zsh/zshrc
+source $HOME/.grml/zsh/zlogin
+
 if [[ `uname` == "Darwin" ]]; then
   source $HOME/.zshrc.osx
 else
   source $HOME/.zshrc.linux
-fi
-
-# Local application environment variables
-if [ -e "$HOME/.zshrc.homeme" ]; then
-  source $HOME/.zshrc.homeme
 fi
 
 #  insert completion on first tab even if ambiguous
