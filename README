@@ -2,10 +2,8 @@
 
 These are my dotfiles.  There are many like them, but these are mine.
 
-### Notes:
+### Usage:
 * git clone
 * git submodule init
 * git submodule update
-* rake
-
-t'done
+* rake install
