@@ -54,10 +54,10 @@ set matchpairs=(:),{:},[:],<:>
 
 """"""""""
 " Search and replace
-set gdefault 		" Make regexp matches everything, instead of just the first one 
+set gdefault 		" Make regex match everything, instead of just the first one
 set incsearch 	" Search all instances
-set hlsearch 		" Highlight matched regexp 
-set ignorecase 		
+set hlsearch 		" Highlight matched regexp
+set ignorecase
 set smartcase 	" Intelligent case-smart searching
 
 """"""""""
@@ -70,7 +70,7 @@ set nojoinspaces
 set nofoldenable
 
 if softab == "on"
-  set expandtab 
+  set expandtab
 endif
 let &tabstop=tabsize
 let &softtabstop=tabsize
@@ -85,6 +85,7 @@ set ofu=syntaxcomplete#Complete
 """"""""""
 " Soft/Hard Wrapping
 set wrap
+"set textwidth=119
 set textwidth=79
 set formatoptions=qrn1
 
@@ -140,7 +141,7 @@ endif
 
 """"""""""
 " Highlight the current line in insert mode
-autocmd InsertLeave * se nocul 
+autocmd InsertLeave * se nocul
 autocmd InsertEnter * se cul
 
 " When editing a file, always jump to the last known cursor position.

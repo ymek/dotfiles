@@ -28,6 +28,7 @@ Plug 'sjl/gundo.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
 "Plug 'msanders/snipmate.vim'
 Plug 'koron/nyancat-vim'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
@@ -35,7 +36,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'airblade/vim-gitgutter'
 Plug 'Keithbsmiley/swift.vim'
 Plug 'bkad/CamelCaseMotion'
-Plug 'mustache/vim-mustache-handlebars'
+Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.mustache' }
 
 call plug#end()
 
