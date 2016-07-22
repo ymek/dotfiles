@@ -64,7 +64,7 @@ set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
 let delimitMate_visual_leader = ","
 
 """"""""""
-" Fugitive 
+" Fugitive
 "set statusline+=%{fugitive#statusline()}
 
 """"""""""

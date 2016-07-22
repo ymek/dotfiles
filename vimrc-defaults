@@ -1,10 +1,10 @@
 set nocompatible
 set lazyredraw
 set ttyfast
-set backspace=indent,eol,start 		" SUPREME BACKSPACE!
-set nostartofline 		            " Make j/k respect the columns (after all, this is not a freaking typewriter)
-set modeline 			                " Respect modeline of the file (eg: "vi:noai:sw=3 ts=6")
-set hidden 			                  " Avoid asking to save before hiding
+set backspace=indent,eol,start    " SUPREME BACKSPACE!
+set nostartofline                 " Make j/k respect the columns (this is not a typewriter)
+set modeline                      " Respect modeline of the file (eg: "vi:noai:sw=3 ts=6")
+set hidden                        " Avoid asking to save before hiding
 set enc=utf-8
 "setlocal spell spelllang=en_us
 
@@ -13,7 +13,7 @@ set visualbell
 set shm=atIWswxrnmlf
 set ruler
 set title
-set titlestring=%f%(\ [%M]%) 	" Show file name at the title
+set titlestring=%f%(\ [%M]%)      " Show file name at the title
 set numberwidth=1
 set report=2
 set laststatus=2
@@ -54,11 +54,11 @@ set matchpairs=(:),{:},[:],<:>
 
 """"""""""
 " Search and replace
-set gdefault 		" Make regex match everything, instead of just the first one
-set incsearch 	" Search all instances
-set hlsearch 		" Highlight matched regexp
+set gdefault     " Make regex match everything, instead of just the first one
+set incsearch    " Search all instances
+set hlsearch     " Highlight matched regexp
 set ignorecase
-set smartcase 	" Intelligent case-smart searching
+set smartcase    " Intelligent case-smart searching
 
 """"""""""
 " Indentation
@@ -111,8 +111,8 @@ set guitablabel=%N/\ %t\ %M
 """"""""""
 " Grep
 if executable("ack")
-	set grepprg=ack
-	set grepformat=%f:%l:%m
+  set grepprg=ack
+  set grepformat=%f:%l:%m
 endif
 
 """"""""""
@@ -122,8 +122,8 @@ set formatprg=par
 """"""""""
 " GUI Options
 "if has("mouse")
-"	set mouse=a
-"	set mousefocus
+"  set mouse=a
+"  set mousefocus
 "endif
 
 if has("gui_running")
