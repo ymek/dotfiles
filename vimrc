@@ -7,6 +7,9 @@ let gui_font  = "Monaco:h12"
 let mapleader = ","
 let g:airline_powerline_fonts = 1
 
+" Matchit for better delimiter matching
+runtime macros/matchit.vim
+
 source ~/.vimrc-defaults
 source ~/.vimrc-helpers
 source ~/.vimrc-keymaps
