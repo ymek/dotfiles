@@ -21,25 +21,27 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'bling/vim-airline'
 
-Plug 'othree/javascript-libraries-syntax.vim' ", { 'for': ['javascript', 'html'] }
 Plug 'godlygeek/tabular'
 Plug 'Raimondi/delimitMate'
 "Plug 'scrooloose/nerdcommenter'
 "Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'sjl/gundo.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rails', { 'for': 'ruby' }
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-endwise'
-"Plug 'msanders/snipmate.vim'
-Plug 'koron/nyancat-vim'
-Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
+Plug 'bkad/CamelCaseMotion'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'airblade/vim-gitgutter'
-Plug 'Keithbsmiley/swift.vim'
-Plug 'bkad/CamelCaseMotion'
+"Plug 'msanders/snipmate.vim'
+Plug 'koron/nyancat-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
+Plug 'Keithbsmiley/swift.vim', { 'for': 'swift' }
+Plug 'tbastos/vim-lua', { 'for': 'lua' }
 Plug 'mustache/vim-mustache-handlebars', { 'for': 'html.mustache' }
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'html'] }
 
 call plug#end()
 
