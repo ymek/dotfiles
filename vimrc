@@ -64,6 +64,8 @@ set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
 """"""""""
 " Delimit Mate
 let delimitMate_visual_leader = ","
+" Ruby-specific(ish); avoids lolwut with '<' and '>'
+autocmd FileType ruby let b:delimitMate_matchpairs="(:),[:],{:}"
 
 """"""""""
 " Fugitive
