@@ -3,7 +3,18 @@ source /usr/local/opt/chruby/share/chruby/auto.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 if [ -d '/usr/X11/include' ]; then
-  export CPPFLAGS="-I/usr/X11/include -I/usr/X11/include/libpng15 -I/usr/X11/include/freetype2"
+  export CPPFLAGS="${CPPFLAGS} -I/usr/X11/include -I/usr/X11/include/libpng15 -I/usr/X11/include/freetype2"
+fi
+
+if [ -d '/usr/local/opt/readline' ]; then
+  export LDFLAGS="${LDFLAGS} -L/usr/local/opt/readline/lib"
+  export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/readline/include"
+fi
+
+if [ -d '/usr/local/opt/openssl' ]; then
+  export LDFLAGS="${LDFLAGS} -L/usr/local/opt/openssl/lib"
+  export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/openssl/include"
+  export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 fi
 
 export ARCHFLAGS="-arch x86_64"
