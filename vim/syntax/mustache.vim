@@ -22,7 +22,7 @@
 if version < 600
   so <sfile>:p:h/html.vim
 else
-  syn include $VIM/vim74/syntax/html.vim
+  syn include $VIM/vim80/syntax/html.vim
   unlet b:current_syntax
 endif
 
