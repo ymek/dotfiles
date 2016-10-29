@@ -35,6 +35,8 @@ Plug 'koron/nyancat-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
+" CodeClimate :)
+Plug 'wfleming/vim-codeclimate'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
