@@ -25,7 +25,7 @@ Plug 'godlygeek/tabular'
 Plug 'Raimondi/delimitMate'
 "Plug 'scrooloose/nerdcommenter'
 "Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'sjl/gundo.vim'
 Plug 'bkad/CamelCaseMotion'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -74,10 +74,9 @@ autocmd FileType ruby let b:delimitMate_matchpairs="(:),[:],{:}"
 "set statusline+=%{fugitive#statusline()}
 
 """"""""""
-" Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+" ALE
+let g:ale_lint_on_text_changed = 'normal' " Only lint while in normal mode
+let g:ale_lint_on_insert_leave = 1        " Automatically lint when leaving insert mode
 
 """"""""""
 " GUndo
