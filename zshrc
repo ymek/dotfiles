@@ -55,3 +55,4 @@ export TERM="xterm-256color"
 alias be='bundle exec'
 alias crails='./bin/rails console'
 alias srails='./bin/rails server'
+alias sspring='./bin/spring stop'
