@@ -1,7 +1,8 @@
-require 'get_process_mem'
+#require 'get_process_mem'
 
 ::Pry.config.editor = 'vim'
-::Pry.config.prompt = ::Pry::NAV_PROMPT
+#::Pry.config.prompt = ::Pry::NAV_PROMPT
+#::Pry.config.prompt = ::Pry::Prompt[:nav]
 
 class ::Object
   # list methods which aren't in superclass
@@ -16,7 +17,7 @@ def print_mem_usage(description)
 end
 
 def print_mem_usage_before_and_after
-  print_mem_usage("Before")
+  print_mem_usage('Before')
   yield
-  print_mem_usage("After")
+  print_mem_usage('After')
 end
