@@ -5,7 +5,6 @@ let tabsize   = 2
 let arrowkeys = "off"
 let gui_font  = "Monaco:h12"
 let mapleader = ","
-let g:airline_powerline_fonts = 1
 
 " Matchit for better delimiter matching
 runtime macros/matchit.vim
@@ -19,7 +18,8 @@ call plug#begin('~/.vim/plugged')
 
 " These need to come first, in this order
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 Plug 'godlygeek/tabular'
 Plug 'Raimondi/delimitMate'
@@ -36,9 +36,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-endwise'
 " CodeClimate :)
-Plug 'wfleming/vim-codeclimate'
+"Plug 'wfleming/vim-codeclimate'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'rainerborene/vim-reek', { 'for': 'ruby' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
 Plug 'Keithbsmiley/swift.vim', { 'for': 'swift' }
 Plug 'tbastos/vim-lua', { 'for': 'lua' }
@@ -60,8 +61,15 @@ filetype plugin indent on
 syntax on
 
 """"""""""
-" Powerline
-set rtp+=$HOME/.vim/bundle/powerline/powerline/bindings/vim
+" vim-airline
+let g:airline_powerline_fonts = 0
+let g:airline_theme='deus'
+
+""""""""""
+" NetRW
+let g:netrw_banner = 1 " enable/disable banner
+let g:netrw_liststyle = 3 " tree view
+"let g:netrw_browse_split = 2 " open new files in vertical split
 
 """"""""""
 " Delimit Mate
@@ -94,6 +102,14 @@ sunmap e
 "set lsp=0
 
 set pastetoggle=<F3>
+
+""""""""""
+" Support chruby
+set shell=$SHELL
+
+""""""""""
+" Support fzf
+set rtp+=/usr/local/opt/fzf
 
 " Strip Windows line endings
 map <F7> :perldo s/\cM//
