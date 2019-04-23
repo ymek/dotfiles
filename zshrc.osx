@@ -37,6 +37,10 @@ if [ -d '/usr/local/opt/bison' ]; then
   export PATH="/usr/local/opt/bison/bin:$PATH"
 fi
 
+if [ -d '/Users/_m/Library/Python/3.7/bin' ]; then
+  export PATH="/Users/_m/Library/Python/3.7/bin:$PATH"
+fi
+
 export ARCHFLAGS="-arch x86_64"
 export SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem
 
