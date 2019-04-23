@@ -53,6 +53,6 @@ export TERM="xterm-256color"
 
 # Add some me-specific aliases
 alias be='bundle exec'
-alias crails='./bin/rails console'
-alias srails='./bin/rails server'
-alias sspring='./bin/spring stop'
+alias crails='bundle exec rails console'
+alias srails='bundle exec rails server'
+alias sspring='bundle exec spring stop'
