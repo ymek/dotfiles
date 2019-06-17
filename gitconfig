@@ -38,6 +38,7 @@
 
 [format]
   pretty = %Cblue%h%Creset %Cgreen[%ar]%Creset (%an) %s
+  numbered = auto
 
 [color]
   ui = auto
