@@ -51,12 +51,6 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # Force 256-color terminals
 export TERM="xterm-256color"
 
-# Add some me-specific aliases
-alias be='bundle exec'
-alias crails='bundle exec rails console'
-alias srails='bundle exec rails server'
-alias sspring='bundle exec spring stop'
-
 if [ -d "$HOME/.nvm" ]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -66,3 +60,21 @@ fi
 if [ -d "$HOME/.yarn/bin" ]; then
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 fi
+
+export FZF_DEFAULT_OPTS="--height=50% --min-height=15 --reverse"
+
+# set autoload path
+fpath=(~/.zsh "${fpath[@]}")
+
+# move cursor to end of line after history search completion
+#autoload -Uz history-search-end cani vmc vmi lps kp fp cani bip bup bcp tmuxify utils ll lx
+autoload -Uz history-search-end fp kp
+
+# every time we load .zshrc, ditch duplicate path entries
+typeset -U PATH fpath
+
+# Add some me-specific aliases
+alias be='bundle exec'
+alias crails='bundle exec rails console'
+alias srails='bundle exec rails server'
+alias sspring='bundle exec spring stop'
