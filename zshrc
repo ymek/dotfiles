@@ -61,6 +61,19 @@ if [ -d "$HOME/.yarn/bin" ]; then
   export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 fi
 
+# Github token for:
+#  - homebrew
+#  - bundler
+if [ -f "$HOME/.keys/github-repo-admin.token" ]; then
+  export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.keys/github-repo-admin.token)
+#  export BUNDLE_GITHUB__COM=x-access-token:$(cat ~/.keys/github-repo-admin.token)
+fi
+
+# ejson key dir
+if [ -d "$HOME/.keys" ]; then
+  export EJSON_KEYDIR="$HOME/.keys"
+fi
+
 export FZF_DEFAULT_OPTS="--height=50% --min-height=15 --reverse"
 
 # set autoload path
