@@ -1,5 +1,3 @@
-PATH="$(pwd)/bin:$PATH"
-
 source $HOME/.grml/zsh/zshenv
 source $HOME/.grml/zsh/zprofile
 source $HOME/.grml/zsh/zshrc
@@ -46,7 +44,8 @@ setopt PROMPT_SUBST
 PS1='%B%F{red}%(?..%? )%b %B%40<..<%~%<< %b$(git_remote_prompt) %F{yellow}$(git_prompt_short_sha)%f %(!.#.») '
 
 # Ensure user-installed binaries take precedence
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+#export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+export PATH="$(pwd)/bin:$PATH"
 
 # Force 256-color terminals
 export TERM="xterm-256color"
