@@ -66,7 +66,10 @@ if which pyenv > /dev/null; then
 fi
 
 fpath=(/usr/local/share/zsh-completions $fpath)
-PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+
+if [ -d '/usr/local/opt/gnu-sed/libexec/gnubin' ]; then
+  export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+fi
 
 # Setup fzf
 # ---------
