@@ -91,6 +91,11 @@ if [ -d '/usr/local/opt/fzf' ]; then
   source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 fi
 
+# Setup dotnet-core
+# -----------------
+if [ -d '/usr/local/share/dotnet' ]; then
+  export PATH="/usr/local/share/dotnet:${PATH}"
+fi
 
 # ensure boot2docker ENV variables
 #if which boot2docker > /dev/null; then
