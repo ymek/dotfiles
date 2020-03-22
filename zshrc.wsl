@@ -1,2 +1,4 @@
-alias open="explorer.exe"
-alias clip="clip.exe"
+# Some odd aliases exist to enable 'seamless' Windows integration
+alias open="/mnt/c/Windows/explorer.exe"
+
+export PATH="/usr/bin/vendor_perl:${PATH}"
