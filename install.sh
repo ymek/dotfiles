@@ -6,24 +6,24 @@
 function link_file() {
   if [ $# -lt 1 ]; then
     echo "No file specified."
-		return
-	fi
+    return
+  fi
 
-	file=$1
+  file=$1
   symlink="${HOME}/.${file}"
 
   echo "${PWD}/${file} -> ${symlink}"
-	ln -s ${PWD}/${file} ${symlink}
+  ln -s ${PWD}/${file} ${symlink}
 }
 
 function remove_file() {
   if [ $# -lt 1 ]; then
     echo "No file specified."
-		return
-	fi
+    return
+  fi
 
-	echo "${1} to be removed!"
-	rm -rf $1
+  echo "${1} to be removed!"
+  rm -rf $1
 }
 
 # if zsh exists and we're not using it, change over
