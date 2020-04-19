@@ -56,6 +56,11 @@ export PATH="$(pwd)/bin:$PATH"
 # Force 256-color terminals
 export TERM="xterm-256color"
 
+# rust
+if [ -d "${HOME}/.cargo/bin" ]; then
+  export PATH="${HOME}/.cargo/bin:${PATH}"
+fi
+
 if [ -d "$HOME/.nvm" ]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
