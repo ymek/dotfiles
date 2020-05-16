@@ -7,3 +7,16 @@ fi
 
 # Some odd aliases exist to enable 'seamless' Windows integration
 alias open="/mnt/c/Windows/explorer.exe"
+
+# Setup fzf
+# ---------
+if [ -d '/usr/share/fzf' ]; then
+  # Auto-completion
+  # ---------------
+  [[ $- == *i* ]] && source "/usr/share/fzf/completion.zsh" 2> /dev/null
+
+  # Key bindings
+  # ------------
+  source "/usr/share/fzf/key-bindings.zsh"
+fi
+
