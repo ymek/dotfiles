@@ -53,7 +53,7 @@ fi
 export ARCHFLAGS="-arch x86_64"
 export SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem
 
-# Java - OSX has a preinstalled binary stub at 
+# Java - OSX has a preinstalled binary stub at
 #export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Uncomment to use Homebrew's directories rather than ~/.pyenv
@@ -106,3 +106,6 @@ fi
 #if which docker-machine > /dev/null; then
 #  eval "$(docker-machine env default)"
 #fi
+
+# Enable compinit completions
+autoload -Uz compinit
