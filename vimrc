@@ -17,7 +17,10 @@ source ~/.vimrc-keymaps
 call plug#begin('~/.vim/plugged')
 
 " These need to come first, in this order
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+" Use the Tabnine fork - their completion engine is straight fire
+" ensure node and npm are installed (or remove ts-completer)
+Plug 'tabnine/YouCompleteMe', { 'do': './install.py --clang-completer --ts-completer' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
