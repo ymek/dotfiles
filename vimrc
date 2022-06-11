@@ -21,6 +21,8 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'arcticicestudio/nord-vim'
+
 Plug 'godlygeek/tabular'
 Plug 'Raimondi/delimitMate'
 "Plug 'scrooloose/nerdcommenter'
@@ -61,9 +63,14 @@ filetype plugin indent on
 syntax on
 
 """"""""""
+" vim-nord
+let g:nord_cursor_line_number_background = 1
+
+""""""""""
 " vim-airline
 let g:airline_powerline_fonts = 0
-let g:airline_theme='deus'
+"let g:airline_theme='deus'
+let g:airline_theme='nord'
 
 """"""""""
 " NetRW
@@ -130,7 +137,8 @@ set completefunc=syntaxcomplete#Complete
 "set statusline+=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 "colorscheme ir_black
-colorscheme cotingale
+"colorscheme cotingale
+colorscheme nord
 set t_Co=256
 set t_ut=
 
