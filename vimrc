@@ -18,13 +18,15 @@ call plug#begin('~/.vim/plugged')
 
 " These need to come first, in this order
 "Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --ts-completer' }
 " Use the Tabnine fork - their completion engine is straight fire
 " ensure node and npm are installed (or remove ts-completer)
-Plug 'tabnine/YouCompleteMe', { 'do': './install.py --clang-completer --ts-completer' }
+" Deprecated. nvim-only now
+"Plug 'tabnine/YouCompleteMe', { 'do': 'python3 ./install.py --clang-completer --ts-completer' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'arcticicestudio/nord-vim'
+"Plug 'arcticicestudio/nord-vim'
 
 Plug 'godlygeek/tabular'
 Plug 'Raimondi/delimitMate'
@@ -44,7 +46,7 @@ Plug 'tpope/vim-endwise'
 "Plug 'wfleming/vim-codeclimate'
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'rainerborene/vim-reek', { 'for': 'ruby' }
+"Plug 'rainerborene/vim-reek', { 'for': 'ruby' }
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee'}
 Plug 'Keithbsmiley/swift.vim', { 'for': 'swift' }
 Plug 'tbastos/vim-lua', { 'for': 'lua' }
@@ -67,13 +69,19 @@ syntax on
 
 """"""""""
 " vim-nord
-let g:nord_cursor_line_number_background = 1
+"let g:nord_cursor_line_number_background = 1
+" Remove the underline from enabling cursorline:
+"highlight clear CursorLine
+
+" Reek
+let g:reek_always_show = 0
+let g:reek_on_loading = 0
 
 """"""""""
 " vim-airline
 let g:airline_powerline_fonts = 0
-"let g:airline_theme='deus'
-let g:airline_theme='nord'
+let g:airline_theme='deus'
+"let g:airline_theme='nord'
 
 """"""""""
 " NetRW
@@ -140,8 +148,8 @@ set completefunc=syntaxcomplete#Complete
 "set statusline+=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 
 "colorscheme ir_black
-"colorscheme cotingale
-colorscheme nord
+"colorscheme nord " For vim-airline
+colorscheme cotingale
 set t_Co=256
 set t_ut=
 
