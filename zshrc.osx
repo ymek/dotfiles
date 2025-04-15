@@ -15,6 +15,11 @@ if [ -d '/usr/X11/include' ]; then
   export CPPFLAGS="${CPPFLAGS} -I/usr/X11/include -I/usr/X11/include/libpng15 -I/usr/X11/include/freetype2"
 fi
 
+if [ -d '/Applications/TeX/TeXShop.app/Contents/Resources/TeXShop/bin' ]; then
+  export PATH="/Applications/TeX/TeXShop.app/Contents/Resources/TeXShop/bin:$PATH"
+  export PATH="/Applications/TeX/TeXShop.app/Contents/Resources/TeXShop/bin/tslatexmk:$PATH"
+fi
+
 if [ -d '/usr/local/opt/readline' ]; then
   export LDFLAGS="${LDFLAGS} -L/usr/local/opt/readline/lib"
   export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/readline/include"
