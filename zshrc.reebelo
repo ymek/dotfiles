@@ -1,0 +1,14 @@
+alias runcobaltus="aws-vault exec staging-us -- pnpm sls offline --stage staging"
+alias runcobaltapac="aws-vault exec staging-apac -- pnpm sls offline --stage staging"
+alias deploytest='rm -rf .next && STORE=reebelo-nz pnpm next build'
+alias gms='git fetch; git checkout staging; git reset --hard origin/main; git merge - --no-edit; git push --force; git checkout -'
+alias mgms='git fetch && git checkout staging && git reset --hard origin/staging && git merge - --no-edit && git push && git checkout -'
+alias ninja_gms='git fetch; git checkout test-blue; git reset --hard origin/main; git merge - --no-edit; git push --force; git checkout -'
+alias ninja_mgms='git fetch && git checkout test-blue && git reset --hard origin/test-blue && git merge - --no-edit && git push && git checkout -'
+
+alias startau="STORE=reebelo-au aws-vault exec dev -- pnpm run start"
+alias startca="STORE=reebelo-ca aws-vault exec dev -- pnpm run start"
+alias startnz="STORE=reebelo-nz aws-vault exec dev -- pnpm run start"
+alias startdev="STORE=reebelo-dev aws-vault exec dev -- pnpm run start"
+alias startus="STORE=reebelo-us aws-vault exec dev -- pnpm run start"
+alias startsg="STORE=quista aws-vault exec dev -- pnpm run start"
