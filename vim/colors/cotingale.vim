@@ -64,7 +64,7 @@ if version >= 700 " Vim 7.x specific colors
 endif
 
 " Syntax highlighting
-hi Comment              ctermfg=264         ctermbg=NONE        cterm=NONE
+hi Comment              ctermfg=246         ctermbg=NONE        cterm=NONE
 hi String               ctermfg=114         ctermbg=NONE        cterm=NONE
 hi Number               ctermfg=139         ctermbg=NONE        cterm=NONE
 
