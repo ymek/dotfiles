@@ -12,6 +12,12 @@ else
   echo "**********************"
 fi
 
+if [ -d '/usr/local/opt/curl' ]; then
+  export PATH="/usr/local/opt/curl/bin:$PATH"
+  export LDFLAGS="${LDFLAGS} -L/usr/local/opt/curl/lib"
+  export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/curl/include"
+fi
+
 if [ -f '/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' ]; then
   source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
