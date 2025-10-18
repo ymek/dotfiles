@@ -15,7 +15,9 @@ if [[ `uname -a | grep -i microsoft | wc -l` > 0 ]]; then
   source $HOME/.zshrc.wsl
 fi
 
-source $HOME/.zshrc.reebelo
+if [ -f "$HOME/.zshrc.reebelo" ]; then
+  source $HOME/.zshrc.reebelo
+fi
 
 #  insert completion on first tab even if ambiguous
 setopt menu_complete
