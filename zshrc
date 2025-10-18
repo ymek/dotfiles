@@ -9,7 +9,7 @@ else
   source $HOME/.zshrc.linux
 fi
 
-# WSL kernels identify as GNU/Linux with Microsoft # in the release.
+# WSL kernels identify as GNU/Linux with 'Microsoft' in the release.
 # example: 4.4.0-18362-Microsoft
 if [[ `uname -a | grep -i microsoft | wc -l` > 0 ]]; then
   source $HOME/.zshrc.wsl
