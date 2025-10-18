@@ -113,3 +113,11 @@ alias srails='bundle exec rails server'
 alias sspring='bundle exec spring stop'
 alias dbe='docker-compose run --rm api bundle exec'
 alias dr='docker-compose run --rm'
+
+# pnpm
+export PNPM_HOME="/Users/_m/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
