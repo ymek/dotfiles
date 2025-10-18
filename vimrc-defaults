@@ -1,3 +1,5 @@
+set encoding=utf-8
+set enc=utf-8
 set nocompatible
 set lazyredraw
 set ttyfast
@@ -5,7 +7,6 @@ set backspace=indent,eol,start    " SUPREME BACKSPACE!
 set nostartofline                 " Make j/k respect the columns (this is not a typewriter)
 set modeline                      " Respect modeline of the file (eg: "vi:noai:sw=3 ts=6")
 set hidden                        " Avoid asking to save before hiding
-set enc=utf-8
 "setlocal spell spelllang=en_us
 
 " Basic UI
@@ -20,6 +21,8 @@ set laststatus=2
 set statusline=%f
 set showcmd
 set showmode
+set signcolumn=yes
+set updatetime=300
 set winminheight=0
 
 """"""""""
@@ -106,7 +109,9 @@ endif
 
 """"""""""
 " Tabs
-set guitablabel=%N/\ %t\ %M
+if exists(':guitablabel')
+  set guitablabel=%N/\ %t\ %M
+endif
 
 """"""""""
 " Grep
