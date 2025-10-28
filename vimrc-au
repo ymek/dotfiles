@@ -21,4 +21,5 @@ autocmd BufNewFile *.rb s-^-#!/usr/bin/env ruby\r\r-
 autocmd BufNewFile *.c  s-^-#include <stdio.h>\r\rint main(int argc, char** argv) {\r\treturn 0;\r}-
 
 autocmd BufWritePre *.py,*.rb,*.sh,*.pl,*.pm,*.js :call StripTrailingWhitespaces()
+autocmd BufWritePre *.ts,*.tsx,*.jsx :call StripTrailingWhitespaces()
 autocmd BufWritePre *.c,*.h,*.go,*.html,*.css :call StripTrailingWhitespaces()
