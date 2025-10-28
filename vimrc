@@ -131,6 +131,7 @@ let g:ale_fixers = {
 \   'yaml': ['prettier'],
 \   'javascript': ['prettier'],
 \   'typescript': ['prettier'],
+\   'typescriptreact': ['prettier'],
 \}
 
 """""""""
