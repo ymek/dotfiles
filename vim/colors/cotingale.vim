@@ -1,6 +1,3 @@
-" cloudhead's color scheme
-
-
 " ********************************************************************************
 " The following are the preferred 16 colors for your terminal
 "           Colors      Bright Colors
@@ -74,9 +71,9 @@ hi PreProc              ctermfg=cyan        ctermbg=NONE        cterm=NONE
 hi Todo                 ctermfg=240         ctermbg=NONE        cterm=bold
 hi Constant             ctermfg=180         ctermbg=NONE        cterm=NONE
 
-hi Identifier           ctermfg=146         ctermbg=NONE        cterm=NONE
-hi Function             ctermfg=103         ctermbg=NONE        cterm=NONE
-hi Class                ctermfg=67          ctermbg=NONE        cterm=bold
+hi Identifier           ctermfg=147         ctermbg=NONE        cterm=NONE
+hi Function             ctermfg=104         ctermbg=NONE        cterm=NONE
+hi Class                ctermfg=68          ctermbg=NONE        cterm=bold
 hi Type                 ctermfg=yellow      ctermbg=NONE        cterm=NONE
 
 hi Special              ctermfg=172         ctermbg=NONE        cterm=NONE
