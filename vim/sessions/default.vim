@@ -110,7 +110,6 @@ nmap yS <Plug>YSurround
 nmap ys <Plug>Ysurround
 vnoremap <silent> <Plug>(coc-snippets-select) :call coc#rpc#notify('doKeymap', ['coc-snippets-select'])
 xnoremap <silent> <Plug>(coc-convert-snippet) :call coc#rpc#notify('doKeymap', ['coc-convert-snippet'])
-nnoremap <SNR>134_: :=v:count ? v:count : ''
 tnoremap <silent> <Plug>(fzf-normal) 
 tnoremap <silent> <Plug>(fzf-insert) i
 nnoremap <silent> <Plug>(fzf-normal) <Nop>
@@ -398,45 +397,36 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess+=aoO
-badd +0 vim/sessions/default.vim
+badd +1 ~/.config/coc/extensions/coc-json-data
 argglobal
 %argdel
-$argadd vim/sessions/default.vim
-edit vim/sessions/default.vim
+$argadd ~/.config/coc/extensions/coc-json-data
+edit NetrwTreeListing
 argglobal
+balt ~/.config/coc/extensions/coc-json-data
 let s:cpo_save=&cpo
 set cpo&vim
 imap <buffer> <silent> <C-G>g <Plug>delimitMateJumpMany
 imap <buffer> <S-BS> <Plug>delimitMateS-BS
 imap <buffer> <C-H> <Plug>delimitMateBS
 imap <buffer> <BS> <Plug>delimitMateBS
-nnoremap <buffer> <silent> gf :call vimgoto#Find("\<C-W>gF")
-nnoremap <buffer> <silent> f :call vimgoto#Find("\<C-W>F")
-nmap <buffer> ,hp <Plug>(GitGutterPreviewHunk)
-nmap <buffer> ,hu <Plug>(GitGutterUndoHunk)
-nmap <buffer> ,hs <Plug>(GitGutterStageHunk)
-xmap <buffer> ,hs <Plug>(GitGutterStageHunk)
-nmap <buffer> [c <Plug>(GitGutterPrevHunk)
-xnoremap <buffer> <silent> [" :exe "normal! gv"|call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
-nnoremap <buffer> <silent> [" :call search('\%(^\s*".*\n\)\%(^\s*"\)\@!', "bW")
-xnoremap <buffer> <silent> [] m':exe "normal! gv"|call search('^\s*end\(f\%[unction]\|\(export\s\+\)\?def\)\>', "bW")
-nnoremap <buffer> <silent> [] m':call search('^\s*end\(f\%[unction]\|\(export\s\+\)\?def\)\>', "bW")
-xnoremap <buffer> <silent> [[ m':exe "normal! gv"|call search('^\s*\(fu\%[nction]\|\(export\s\+\)\?def\)\>', "bW")
-nnoremap <buffer> <silent> [[ m':call search('^\s*\(fu\%[nction]\|\(export\s\+\)\?def\)\>', "bW")
-nmap <buffer> ]c <Plug>(GitGutterNextHunk)
-xnoremap <buffer> <silent> ]" :exe "normal! gv"|call search('\%(^\s*".*\n\)\@<!\%(^\s*"\)', "W")
-nnoremap <buffer> <silent> ]" :call search('\%(^\s*".*\n\)\@<!\%(^\s*"\)', "W")
-xnoremap <buffer> <silent> ][ m':exe "normal! gv"|call search('^\s*end\(f\%[unction]\|\(export\s\+\)\?def\)\>', "W")
-nnoremap <buffer> <silent> ][ m':call search('^\s*end\(f\%[unction]\|\(export\s\+\)\?def\)\>', "W")
-xnoremap <buffer> <silent> ]] m':exe "normal! gv"|call search('^\s*\(fu\%[nction]\|\(export\s\+\)\?def\)\>', "W")
-nnoremap <buffer> <silent> ]] m':call search('^\s*\(fu\%[nction]\|\(export\s\+\)\?def\)\>', "W")
-xmap <buffer> ac <Plug>(GitGutterTextObjectOuterVisual)
-omap <buffer> ac <Plug>(GitGutterTextObjectOuterPending)
-nnoremap <buffer> <silent> gf :call vimgoto#Find('gF')
-xmap <buffer> ic <Plug>(GitGutterTextObjectInnerVisual)
-omap <buffer> ic <Plug>(GitGutterTextObjectInnerPending)
-nnoremap <buffer> <silent> <C-W>gf :call vimgoto#Find("\<C-W>gF")
-nnoremap <buffer> <silent> <C-W>f :call vimgoto#Find("\<C-W>F")
+nmap <buffer> <nowait> <silent>  <Plug>NetrwRefresh
+nmap <buffer> <nowait> <silent>  <Plug>NetrwLocalBrowseCheck
+nmap <buffer> <nowait> <silent>  <Plug>NetrwServerEdit
+nmap <buffer> <nowait> <silent> % <Plug>NetrwOpenFile
+nmap <buffer> <nowait> <silent> - <Plug>NetrwBrowseUpDir
+nmap <buffer> <nowait> <silent> C <Plug>NetrwSetChgwin
+nmap <buffer> <nowait> <silent> a <Plug>NetrwHide_a
+nmap <buffer> <nowait> <silent> cd <Plug>NetrwLcd
+nmap <buffer> <nowait> <silent> cB <Plug>NetrwBadd_cB
+nmap <buffer> <nowait> <silent> cb <Plug>NetrwBadd_cb
+nmap <buffer> <nowait> <silent> gb <Plug>NetrwBookHistHandler_gb
+nnoremap <buffer> <F1> :he netrw-quickhelp
+nmap <buffer> <nowait> <silent> <S-CR> <Plug>NetrwTreeSqueeze
+nnoremap <buffer> <silent> <S-Up> :Pexplore
+nnoremap <buffer> <silent> <S-Down> :Nexplore
+nmap <buffer> <nowait> <silent> <C-R> <Plug>NetrwServerEdit
+nmap <buffer> <nowait> <silent> <C-L> <Plug>NetrwRefresh
 imap <buffer> <silent> g <Plug>delimitMateJumpMany
 imap <buffer>  <Plug>delimitMateBS
 imap <buffer> " <Plug>delimitMate"
@@ -460,8 +450,8 @@ setlocal balloonexpr=
 setlocal nobinary
 setlocal nobreakindent
 setlocal breakindentopt=
-setlocal bufhidden=
-setlocal buflisted
+setlocal bufhidden=delete
+setlocal nobuflisted
 setlocal buftype=
 setlocal nocindent
 setlocal cinkeys=0{,0},0),0],:,0#,!^F,o,O,e
@@ -469,8 +459,8 @@ setlocal cinoptions=
 setlocal cinscopedecls=public,protected,private
 setlocal cinwords=if,else,while,do,for,switch
 setlocal colorcolumn=
-setlocal comments=sO:\"\ -,mO:\"\ \ ,eO:\"\",:\"\\\ ,:\"
-setlocal commentstring=\"%s
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*\ %s\ */
 setlocal complete=.,w,b,u,U,t,i,d
 setlocal completefunc=syntaxcomplete#Complete
 setlocal completeopt=
@@ -480,9 +470,9 @@ setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
 setlocal nocursorcolumn
-setlocal nocursorline
+setlocal cursorline
 setlocal cursorlineopt=both
-setlocal define=\\v^\\s*export\\s*(def|const|var|final)
+setlocal define=
 setlocal dictionary=
 setlocal nodiff
 setlocal diffanchors=
@@ -490,8 +480,8 @@ setlocal equalprg=
 setlocal errorformat=
 setlocal eventignorewin=
 setlocal expandtab
-if &filetype != 'vim'
-setlocal filetype=vim
+if &filetype != 'netrw'
+setlocal filetype=netrw
 endif
 setlocal fillchars=
 setlocal findfunc=
@@ -509,20 +499,20 @@ setlocal foldnestmax=20
 setlocal foldtext=foldtext()
 setlocal formatexpr=
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal formatoptions=n1croql
+setlocal formatoptions=qrn1
 setlocal formatprg=
 setlocal grepformat=
 setlocal grepprg=
 setlocal iminsert=0
 setlocal imsearch=-1
-setlocal include=\\v^\\s*import\\s*(autoload)?
+setlocal include=
 setlocal includeexpr=
-setlocal indentexpr=g:VimIndent()
-setlocal indentkeys=0{,0},0),0],!^F,o,O,e,=endif,=enddef,=endfu,=endfor,=endwh,=endtry,=endclass,=endinterface,=endenum,=},=else,=cat,=finall,=END,0\\,0=\"\\\ ,0=#\\\ 
+setlocal indentexpr=
+setlocal indentkeys=0{,0},0),0],:,0#,!^F,o,O,e
 setlocal infercase
 setlocal isexpand=
-setlocal iskeyword=@,48-57,_,192-255,#
-setlocal keywordprg=:VimKeywordPrg
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
 setlocal lhistory=10
 setlocal nolinebreak
 setlocal nolisp
@@ -534,17 +524,17 @@ setlocal makeencoding=
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:],<:>
 setlocal modeline
-setlocal modifiable
+setlocal nomodifiable
 setlocal nrformats=bin,octal,hex
 setlocal nonumber
 set numberwidth=1
 setlocal numberwidth=1
-setlocal omnifunc=vimcomplete#Complete
+setlocal omnifunc=syntaxcomplete#Complete
 setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
 setlocal quoteescape=\\
-setlocal noreadonly
+setlocal readonly
 setlocal norelativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
@@ -568,8 +558,8 @@ setlocal statusline=%!airline#statusline(1)
 setlocal suffixesadd=
 setlocal noswapfile
 setlocal synmaxcol=3000
-if &syntax != 'vim'
-setlocal syntax=vim
+if &syntax != 'netrw'
+setlocal syntax=netrw
 endif
 setlocal tabstop=2
 setlocal tagcase=
@@ -590,16 +580,17 @@ setlocal wincolor=
 setlocal nowinfixbuf
 setlocal nowinfixheight
 setlocal nowinfixwidth
-setlocal wrap
+setlocal nowrap
 setlocal wrapmargin=0
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 808 - ((86 * winheight(0) + 43) / 87)
+let s:l = 8 - ((7 * winheight(0) + 43) / 87)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 808
+keepjumps 8
 normal! 0
+lcd ~/src/dotfiles
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0
   silent exe 'bwipe ' . s:wipebuf
@@ -612,6 +603,7 @@ if filereadable(s:sx)
   exe "source " . fnameescape(s:sx)
 endif
 let &g:so = s:so_save | let &g:siso = s:siso_save
+nohlsearch
 doautoall SessionLoadPost
 unlet SessionLoad
 " vim: set ft=vim :
