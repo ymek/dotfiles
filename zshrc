@@ -58,7 +58,7 @@ PS1='%B%F{red}%(?..%? )%b %B%40<..<%~%<< %b$(git_remote_prompt) %F{yellow}$(git_
 export PATH="$(pwd)/bin:$PATH"
 
 # Force 256-color terminals
-export TERM="xterm-256color"
+export COLORTERM="xterm-256color"
 
 # rust
 if [ -d "${HOME}/.cargo/bin" ]; then
