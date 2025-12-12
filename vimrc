@@ -125,13 +125,16 @@ let g:ale_typescript_prettier_executable = 'prettierd'
 let g:ale_json_prettier_executable = 'prettierd'
 let g:ale_yaml_prettier_executable = 'prettierd'
 
+let g:ale_javascript_eslint_executable = 'eslintd'
+let g:ale_typescript_eslint_executable = 'eslintd'
+
 let g:ale_fixers = {
 \   'css':  ['prettier'],
 \   'json': ['prettier'],
 \   'yaml': ['prettier'],
-\   'javascript': ['prettier'],
-\   'typescript': ['prettier'],
-\   'typescriptreact': ['prettier'],
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint'],
+\   'typescriptreact': ['eslint'],
 \}
 
 """""""""
