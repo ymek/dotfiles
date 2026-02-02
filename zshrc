@@ -19,6 +19,10 @@ if [ -f "$HOME/.zshrc.reebelo" ]; then
   source $HOME/.zshrc.reebelo
 fi
 
+if [ -f "$HOME/.zshrc.local" ]; then
+  source $HOME/.zshrc.local
+fi
+
 #  insert completion on first tab even if ambiguous
 setopt menu_complete
 
