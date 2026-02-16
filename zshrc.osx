@@ -1,25 +1,35 @@
+if [ -f '/opt/homebrew/bin/brew' ]; then
+  HOMEBREW_PREFIX=$(/opt/homebrew/bin/brew --prefix)
+elif [ -f '/usr/local/bin/brew' ]; then
+  HOMEBREW_PREFIX=$(/usr/local/bin/brew --prefix)
+else
+  echo "**********************"
+  echo "* HOMEBREW NOT FOUND *"
+  echo "**********************"
+fi
+
 # Apparently homebrew needs this now
 if [ -f '/opt/homebrew/bin/brew' ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-if [ -f '/usr/local/opt/chruby/share/chruby/chruby.sh' ]; then
-  source /usr/local/opt/chruby/share/chruby/chruby.sh
-  source /usr/local/opt/chruby/share/chruby/auto.sh
+if [ -f "${HOMEBREW_PREFIX}/opt/chruby/share/chruby/chruby.sh" ]; then
+  source ${HOMEBREW_PREFIX}/opt/chruby/share/chruby/chruby.sh
+  source ${HOMEBREW_PREFIX}/opt/chruby/share/chruby/auto.sh
 #else
 #  echo "**********************"
 #  echo "*  chruby NOT FOUND  *"
 #  echo "**********************"
 fi
 
-if [ -d '/usr/local/opt/curl' ]; then
-  export PATH="/usr/local/opt/curl/bin:$PATH"
-  export LDFLAGS="${LDFLAGS} -L/usr/local/opt/curl/lib"
-  export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/curl/include"
+if [ -d "${HOMEBREW_PREFIX}/opt/curl" ]; then
+  export PATH="${HOMEBREW_PREFIX}/opt/curl/bin:$PATH"
+  export LDFLAGS="${LDFLAGS} -L${HOMEBREW_PREFIX}/opt/curl/lib"
+  export CPPFLAGS="${CPPFLAGS} -I${HOMEBREW_PREFIX}/opt/curl/include"
 fi
 
-if [ -f '/usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh' ]; then
-  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f "${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]; then
+  source ${HOMEBREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 if [ -d '/usr/X11/include' ]; then
@@ -31,48 +41,48 @@ if [ -d '/Applications/TeX/TeXShop.app/Contents/Resources/TeXShop/bin' ]; then
   export PATH="/Applications/TeX/TeXShop.app/Contents/Resources/TeXShop/bin/tslatexmk:$PATH"
 fi
 
-if [ -d '/usr/local/opt/readline' ]; then
-  export LDFLAGS="${LDFLAGS} -L/usr/local/opt/readline/lib"
-  export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/readline/include"
+if [ -d "${HOMEBREW_PREFIX}/opt/readline" ]; then
+  export LDFLAGS="${LDFLAGS} -L${HOMEBREW_PREFIX}/opt/readline/lib"
+  export CPPFLAGS="${CPPFLAGS} -I${HOMEBREW_PREFIX}/opt/readline/include"
 fi
 
-if [ -d '/usr/local/opt/libpq' ]; then
-  export PATH="/usr/local/opt/libpq/bin:$PATH"
+if [ -d "${HOMEBREW_PREFIX}/opt/libpq" ]; then
+  export PATH="${HOMEBREW_PREFIX}/opt/libpq/bin:$PATH"
 
-  export LDFLAGS="${LDFLAGS} -L/usr/local/opt/libpq/lib"
-  export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/libpq/include"
+  export LDFLAGS="${LDFLAGS} -L${HOMEBREW_PREFIX}/opt/libpq/lib"
+  export CPPFLAGS="${CPPFLAGS} -I${HOMEBREW_PREFIX}/opt/libpq/include"
 
   if [ -z "${PKG_CONFIG_PATH}" ]; then
-    export PKG_CONFIG_PATH="/usr/local/opt/libpq/lib/pkgconfig"
+    export PKG_CONFIG_PATH="${HOMEBREW_PREFIX}/opt/libpq/lib/pkgconfig"
   else
-    export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:/usr/local/opt/libpq/lib/pkgconfig"
+    export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${HOMEBREW_PREFIX}/opt/libpq/lib/pkgconfig"
   fi
 fi
 
-if [ -d '/usr/local/opt/openssl' ]; then
-  export LDFLAGS="${LDFLAGS} -L/usr/local/opt/openssl/lib"
-  export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/openssl/include"
+if [ -d "${HOMEBREW_PREFIX}/opt/openssl" ]; then
+  export LDFLAGS="${LDFLAGS} -L${HOMEBREW_PREFIX}/opt/openssl/lib"
+  export CPPFLAGS="${CPPFLAGS} -I${HOMEBREW_PREFIX}/opt/openssl/include"
 
   if [ -z "${PKG_CONFIG_PATH}" ]; then
-    export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
+    export PKG_CONFIG_PATH="${HOMEBREW_PREFIX}/opt/openssl/lib/pkgconfig"
   else
-    export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:/usr/local/opt/openssl/lib/pkgconfig"
+    export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${HOMEBREW_PREFIX}/opt/openssl/lib/pkgconfig"
   fi
 fi
 
-if [ -d '/usr/local/opt/libffi' ]; then
-  export LDFLAGS="${LDFLAGS} -L/usr/local/opt/libffi/lib"
+if [ -d "${HOMEBREW_PREFIX}/opt/libffi" ]; then
+  export LDFLAGS="${LDFLAGS} -L${HOMEBREW_PREFIX}/opt/libffi/lib"
 
   if [ -z "${PKG_CONFIG_PATH}" ]; then
-    export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
+    export PKG_CONFIG_PATH="${HOMEBREW_PREFIX}/opt/libffi/lib/pkgconfig"
   else
-    export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:/usr/local/opt/libffi/lib/pkgconfig"
+    export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:${HOMEBREW_PREFIX}/opt/libffi/lib/pkgconfig"
   fi
 fi
 
-if [ -d '/usr/local/opt/bison' ]; then
-  export LDFLAGS="${LDFLAGS} -L/usr/local/opt/bison/lib"
-  export PATH="/usr/local/opt/bison/bin:$PATH"
+if [ -d "${HOMEBREW_PREFIX}/opt/bison" ]; then
+  export LDFLAGS="${LDFLAGS} -L${HOMEBREW_PREFIX}/opt/bison/lib"
+  export PATH="${HOMEBREW_PREFIX}/opt/bison/bin:$PATH"
 fi
 
 if [ -d '/Users/_m/Library/Python/3.7/bin' ]; then
@@ -80,13 +90,13 @@ if [ -d '/Users/_m/Library/Python/3.7/bin' ]; then
 fi
 
 export ARCHFLAGS="-arch x86_64"
-#export SSL_CERT_FILE=/usr/local/etc/openssl/cert.pem
+#export SSL_CERT_FILE=${HOMEBREW_PREFIX}/etc/openssl/cert.pem
 
 # Java - OSX has a preinstalled binary stub at
 #export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Uncomment to use Homebrew's directories rather than ~/.pyenv
-#export PYENV_ROOT=/usr/local/opt/pyenv
+#export PYENV_ROOT=${HOMEBREW_PREFIX}/opt/pyenv
 
 #export PYENV_VERSION="2.7.8"
 # Enable pyenv shims and autocompletion
@@ -94,36 +104,36 @@ if which pyenv > /dev/null; then
   eval "$(pyenv init -)"
 fi
 
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath=(${HOMEBREW_PREFIX}/share/zsh-completions $fpath)
 
-if [ -d '/usr/local/opt/gnu-sed/libexec/gnubin' ]; then
-  export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+if [ -d "${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin" ]; then
+  export PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:$PATH"
 fi
 
-if [ -d '/usr/local/opt/python/libexec/bin' ]; then
-  export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+if [ -d "${HOMEBREW_PREFIX}/opt/python/libexec/bin" ]; then
+  export PATH="${HOMEBREW_PREFIX}/opt/python/libexec/bin:$PATH"
 fi
 
 # Setup fzf
 # ---------
-if [ -d '/usr/local/opt/fzf' ]; then
-  if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-    export PATH="${PATH:+${PATH}:}/usr/local/opt/fzf/bin"
+if [ -d "${HOMEBREW_PREFIX}/opt/fzf" ]; then
+  if [[ ! "$PATH" == *${HOMEBREW_PREFIX}/opt/fzf/bin* ]]; then
+    export PATH="${PATH:+${PATH}:}${HOMEBREW_PREFIX}/opt/fzf/bin"
   fi
 
   # Auto-completion
   # ---------------
-  [[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
+  [[ $- == *i* ]] && source "${HOMEBREW_PREFIX}/opt/fzf/shell/completion.zsh" 2> /dev/null
 
   # Key bindings
   # ------------
-  source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+  source "${HOMEBREW_PREFIX}/opt/fzf/shell/key-bindings.zsh"
 fi
 
 # Setup dotnet-core
 # -----------------
-if [ -d '/usr/local/share/dotnet' ]; then
-  export PATH="/usr/local/share/dotnet:${PATH}"
+if [ -d "${HOMEBREW_PREFIX}/share/dotnet" ]; then
+  export PATH="${HOMEBREW_PREFIX}/share/dotnet:${PATH}"
 fi
 
 # ensure boot2docker ENV variables
